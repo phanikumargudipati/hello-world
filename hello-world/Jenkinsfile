@@ -10,6 +10,10 @@ pipeline {
                 }
             }
         }
-
+        stage('Deploy') {
+           steps {
+               bat 'copy /Y C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\hello-world-pipeline\\hello-world\\target\\hello-world.war C:\\Tomcat\\apache-tomcat-11.0.21-windows-x64\\webapps'
+    }
+}
     }
 }
