@@ -3,15 +3,11 @@ pipeline {
 
     stages {
 
-        stage('Clone') {
-            steps {
-                echo 'Cloning from GitHub'
-            }
-        }
-
         stage('Build') {
             steps {
-                bat 'mvn clean package'
+                dir('hello-world') {
+                    bat 'mvn clean package'
+                }
             }
         }
 
